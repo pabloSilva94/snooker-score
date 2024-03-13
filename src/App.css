@@ -1,0 +1,286 @@
+.App {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
+}
+
+input {
+  height: 50px;
+  width: 60%;
+  background: none;
+  border: 0 none;
+  border-bottom: 1px solid #666161c9;
+  text-align: center;
+  font-size: 30px;
+  color: #fff;
+}
+
+input:focus {
+  outline: 0;
+}
+input::placeholder {
+  font-size: 20px;
+  font-style: italic;
+  color: #666161c9;
+}
+.player1,
+.player1-animado,
+.player2-animado,
+.player2 {
+  height: 450px;
+}
+@keyframes border-animation {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
+  }
+  100% {
+    box-shadow: 0 0 0 20px rgba(255, 255, 255, 0);
+  }
+}
+.player1-animado {
+  animation: border-animation 1.5s infinite;
+}
+.player2-animado {
+  animation: border-animation 1.5s infinite;
+}
+.bolls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 85%;
+  height: 150px;
+  border-radius: 10px;
+  border: 1px solid #666161c9;
+}
+#bollsP {
+  height: 150px;
+}
+#ball1 {
+  background: red;
+}
+#ball2 {
+  background: yellow;
+}
+#ball3 {
+  background: green;
+}
+#ball4 {
+  background: rgb(114, 3, 3);
+}
+#ball5 {
+  background: blue;
+}
+#ball6 {
+  background: rgb(233, 115, 135);
+}
+#ball7 {
+  background: black;
+}
+#ball1,
+#ball2,
+#ball3,
+#ball4,
+#ball5,
+#ball6,
+#ball7 {
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+  cursor: pointer;
+  animation-name: borderSelected;
+  animation-iteration-count: infinite;
+  animation-duration: 4s;
+  animation-delay: 0.3s;
+}
+
+@keyframes borderSelected {
+  0% {
+  }
+  25% {
+    box-shadow: 1px 1px 1px #5555;
+  }
+  50% {
+    box-shadow: 2px 2px 2px #5555;
+  }
+  75% {
+    box-shadow: 2px 2px 2px #5555;
+  }
+  100% {
+    box-shadow: 2px 2px 2px #5555;
+  }
+}
+
+/* informação do player1 */
+.player1,
+.player1-animado {
+  margin-top: 30px;
+  background: #252525;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.p1score {
+  width: 90%;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.p1score > span {
+  font-size: 30px;
+}
+.p1score > h1 {
+  font-size: 50px;
+}
+
+/* informação central */
+.infos {
+  width: 20%;
+  height: 40%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.infosPla {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.infosPla > fieldset {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  border: 1px solid #666161c9;
+}
+.infosPla > button {
+  height: 40px;
+  font-size: 15px;
+  border-radius: 10px;
+  border: 0 none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.infosPla > button:hover {
+  transition: 0.3s;
+  background: #888888;
+}
+
+/* 
+} */
+#snooker {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-radius: 10px;
+  height: 100%;
+  width: 100%;
+}
+
+/* informação do player2 */
+
+.player2,
+.player2-animado {
+  margin-top: 30px;
+  background: #252525;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+}
+@media only screen and (max-width: 500px) {
+  .App {
+    gap: 0;
+    margin: 0;
+    display: flex;
+    width: 100%;
+  }
+
+  input {
+    width: 80%;
+  }
+  .player1,
+  .player2 {
+    width: 140px;
+    height: 250px;
+  }
+  .bolls {
+    width: 60px;
+  }
+  #ball1,
+  #ball2,
+  #ball3,
+  #ball4,
+  #ball5,
+  #ball6,
+  #ball7 {
+    height: 40px;
+    width: 40px;
+  }
+  #snooker {
+    height: 130px;
+    grid-template-columns: auto auto auto;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  input {
+    font-size: 20px;
+  }
+  .player1,
+  .player1-animado,
+  .player2-animado,
+  .player2 {
+    margin: 10px;
+    height: 520px;
+  }
+  .bolls {
+    height: 150px;
+  }
+  #ball1,
+  #ball2,
+  #ball3,
+  #ball4,
+  #ball5,
+  #ball6,
+  #ball7 {
+    width: 30px;
+    height: 30px;
+  }
+
+  .infos > h1 {
+    font-size: 15px;
+  }
+
+  .infosPla > fieldset > legend {
+    display: none;
+  }
+  .infosPla > button {
+    font-size: 11px;
+  }
+  .player1,
+  .p1score > span {
+    font-size: 16px;
+  }
+  .player2 > p1score > span {
+    font-size: 16px;
+  }
+  #pts {
+    font-size: 30px;
+  }
+  #dif {
+    font-size: 20px;
+  }
+}
